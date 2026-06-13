@@ -4,15 +4,14 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Winterlight Technologies | EMI Planner, FD Interest Checker & Hindi Crossword</title>
+<title>Winterlight Technologies | Meaningful Android Apps & Games</title>
 
-<meta name="description" content="Winterlight Technologies offers high-quality Android tools: BankDost (Home & Car Loan EMI Planner, FD Interest Checker) and Shabd Sangam (Authentic Hindi Crossword/वर्ग पहेली).">
+<meta name="description" content="Winterlight Technologies creates modern Android applications, financial utilities like BankDost, and authentic educational games like Shabd Sangam, an 8x8 Hindi crossword puzzle.">
 
 <link rel="canonical" href="https://winterlighttechnologies.com/">
 
-<meta property="og:site_name" content="Winterlight Technologies">
-<meta property="og:title" content="Winterlight Technologies | Android Financial Tools & Hindi Games">
-<meta property="og:description" content="Discover our tools: BankDost for Home/Car Loan EMI planning and FD interest tracking, and Shabd Sangam for daily Hindi crossword puzzles.">
+<meta property="og:title" content="Winterlight Technologies | Meaningful Mobile Apps">
+<meta property="og:description" content="Discover our thoughtful mobile experiences like BankDost and Shabd Sangam, designed to educate, simplify, and engage.">
 <meta property="og:image" content="https://winterlighttechnologies.com/logo.png">
 <meta property="og:url" content="https://winterlighttechnologies.com/">
 <meta property="og:type" content="website">
@@ -38,7 +37,7 @@
       "operatingSystem": "ANDROID",
       "applicationCategory": "FinanceApplication",
       "url": "https://play.google.com/store/apps/details?id=com.winterlight.bankdost&hl=en",
-      "description": "BankDost: The complete financial planner for India. Calculate Home Loan & Car Loan EMIs, check FD interest rates, SIP/RD/PPF calculations, bank balance enquiry, IFSC search, gold rates, and bank holidays.",
+      "description": "BankDost is an all-in-one financial utility app for India featuring EMI Calculator, SIP Calculator, FD Calculator, RD Calculator, PPF Calculator, APY Calculator, SSY Calculator, Bank Balance Enquiry, IFSC Search, FD Interest Rates, Gold Rates, and Bank Holiday Calendar.",
       "offers": {
         "@type": "Offer",
         "price": "0",
@@ -52,7 +51,7 @@
       "applicationCategory": "GameApplication",
       "genre": "Educational Game",
       "url": "https://play.google.com/store/apps/details?id=com.winterlight.shabdsangam&hl=en",
-      "description": "Shabd Sangam: A premium Hindi crossword (वर्ग पहेली) game. Build Hindi vocabulary with daily 8x8 word puzzles, offline play, and brain training challenges.",
+      "description": "A premium Hindi crossword game (वर्ग पहेली) and vocabulary builder featuring daily 8x8 grid puzzles. Built with modern UI effects, the game challenges players with 16-letter tiles and unique word mechanics where letters with matras are treated as a single cell. Perfect for fans of genuine shabd paheli (शब्द पहेली).",
       "offers": {
         "@type": "Offer",
         "price": "0",
@@ -65,7 +64,9 @@
 
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
-:root{--primary:#1d4ed8;--secondary:#67c6f1;--dark:#0f172a;--text:#475569;--bg:#f8fbff;}
+:root{
+--primary:#1d4ed8;--secondary:#67c6f1;--dark:#0f172a;--text:#475569;--bg:#f8fbff;
+}
 *{margin:0;padding:0;box-sizing:border-box;font-family:'Inter',sans-serif}
 body{background:var(--bg);color:var(--dark);overflow-x:hidden}
 .hero-bg,.hero-bg2{position:fixed;border-radius:50%;z-index:-1}
@@ -74,61 +75,99 @@ body{background:var(--bg);color:var(--dark);overflow-x:hidden}
 .container{width:90%;max-width:1200px;margin:auto}
 header{padding:25px 0}
 nav{display:flex;justify-content:space-between;align-items:center}
-.nav-brand{font-size:1.25rem;font-weight:700;color:var(--dark)}
 nav ul{display:flex;gap:30px;list-style:none}
-nav a{text-decoration:none;color:var(--dark);font-weight:500}
-nav a:hover{color:var(--primary)}
+nav a{text-decoration:none;color:var(--dark)}
 .hero{padding:80px 0 120px;text-align:center}
 .logo{width:220px;max-width:90%;margin-bottom:30px}
-.hero h1{font-size:3rem;margin-bottom:20px;letter-spacing:-0.02em}
+.hero h1{font-size:3rem;margin-bottom:20px}
 .hero p{max-width:700px;margin:auto;color:var(--text);line-height:1.8}
 .buttons{margin-top:35px;display:flex;justify-content:center;gap:15px;flex-wrap:wrap}
-.btn{padding:14px 28px;border-radius:50px;text-decoration:none;font-weight:600;transition:opacity 0.2s}
+.btn{padding:14px 28px;border-radius:50px;text-decoration:none;font-weight:600}
 .btn-primary{background:linear-gradient(135deg,var(--primary),var(--secondary));color:white}
 .btn-secondary{background:white;border:2px solid #dbeafe;color:var(--primary)}
 .section{padding:90px 0}
-.section-title{text-align:center;font-size:2.2rem;margin-bottom:20px;letter-spacing:-0.01em}
+.section-title{text-align:center;font-size:2.2rem;margin-bottom:20px}
 .section-sub{text-align:center;max-width:700px;margin:0 auto 50px;color:var(--text)}
-.products{display:grid;gap:30px;grid-template-columns:repeat(auto-fit,minmax(320px,1fr))}
-.card{background:white;padding:35px;border-radius:24px;box-shadow:0 10px 30px rgba(0,0,0,.05)}
+.products,.services{display:grid;gap:30px}
+.products{grid-template-columns:repeat(auto-fit,minmax(320px,1fr))}
+.services{grid-template-columns:repeat(auto-fit,minmax(250px,1fr))}
+.card,.service,.contact{background:white;border-radius:24px;box-shadow:0 10px 30px rgba(0,0,0,.05)}
+.card{padding:35px}
 .card img{height:120px;display:block;margin:0 auto 25px}
-.card h3{text-align:center;margin-bottom:12px;font-size:1.5rem}
-.card p{text-align:center;color:var(--text);line-height:1.8}
-.store-btn{display:block;width:max-content;margin:25px auto 0;background:var(--primary);color:white;text-decoration:none;padding:12px 22px;border-radius:50px;font-weight:600}
-footer{padding:40px 0;text-align:center;color:var(--text);border-top:1px solid #f1f5f9}
+.card h3,.card p{text-align:center}
+.card p,.service p,.about{color:var(--text);line-height:1.8}
+.store-btn{display:block;width:max-content;margin:25px auto 0;background:var(--primary);color:white;text-decoration:none;padding:12px 22px;border-radius:50px}
+.service{padding:30px}
+.about{max-width:850px;margin:auto;text-align:center}
+.contact{padding:50px;text-align:center}
+footer{padding:40px 0;text-align:center;color:var(--text)}
+@media(max-width:768px){.hero h1{font-size:2.2rem}nav ul{display:none}}
 </style>
 </head>
 <body>
 <div class="hero-bg"></div><div class="hero-bg2"></div>
-<header><div class="container"><nav><div class="nav-brand">Winterlight Technologies</div><ul><li><a href="#products">Products</a></li><li><a href="#about">About</a></li></ul></nav></div></header>
+<header><div class="container"><nav><h3>Winterlight Technologies</h3><ul><li><a href="#products">Products</a></li><li><a href="#services">Services</a></li><li><a href="#about">About</a></li><li><a href="#contact">Contact</a></li></ul></nav></div></header>
 
 <section class="hero">
 <div class="container">
-<img src="logo.png" alt="Winterlight Technologies Logo" class="logo">
-<h1>Meaningful Android Apps & Games</h1>
-<p>Thoughtful mobile experiences built for India. Our portfolio includes powerful financial tools and engaging educational games designed for utility and growth.</p>
+<img src="logo.png" alt="Winterlight Technologies" class="logo">
+<h1>Creating Meaningful Mobile Apps & Games</h1>
+<p>We build thoughtful mobile experiences that educate, simplify, and engage. Our products are designed with a focus on usefulness, simplicity, and long‑term value.</p>
 <div class="buttons">
 <a href="#products" class="btn btn-primary">Explore Products</a>
+<a href="#contact" class="btn btn-secondary">Contact Us</a>
 </div>
 </div>
 </section>
 
 <section class="section" id="products">
 <div class="container">
-<h2 class="section-title">Our Android Portfolio</h2>
+<h2 class="section-title">Our Products</h2>
+<p class="section-sub">Focused products built to solve real problems and create meaningful experiences.</p>
 <div class="products">
 <div class="card">
-<img src="bankdost.png" alt="BankDost App">
+<img src="bankdost.png" alt="BankDost">
 <h3>BankDost</h3>
-<p>Your all-in-one financial planner for India. Calculate <strong>home loan</strong> and <strong>car loan</strong> EMIs, use our <strong>FD interest checker</strong>, SIP calculator, IFSC search, and manage your savings effectively.</p>
+<p>An all-in-one financial utility app for India featuring EMI, SIP, and loan calculators, bank balance enquiry, IFSC search, and daily FD and gold rates.</p>
 <a class="store-btn" href="bankdost.html">Learn More</a>
 </div>
 <div class="card">
-<img src="shabdsangam.png" alt="Shabd Sangam Game">
+<img src="shabdsangam.png" alt="Shabd Sangam">
 <h3>Shabd Sangam</h3>
-<p>An authentic <strong>Hindi crossword game (वर्ग पहेली)</strong>. Master Hindi vocabulary, improve your spelling, and train your brain with daily 8x8 offline word puzzles and challenging grid mechanics.</p>
+<p>An authentic 8x8 Hindi crossword (वर्ग पहेली) experience. Build your vocabulary daily with challenging word puzzles, offline play, and a relaxing modern interface.</p>
 <a class="store-btn" href="shabdsangam.html">Learn More</a>
 </div>
+</div>
+</div>
+</section>
+
+<section class="section" id="services">
+<div class="container">
+<h2 class="section-title">What We Build</h2>
+<div class="services">
+<div class="service"><h4>Mobile Applications</h4><p>Modern Android applications focused on performance, reliability, and user experience.</p></div>
+<div class="service"><h4>Educational Games</h4><p>Learning experiences that make knowledge engaging and enjoyable.</p></div>
+<div class="service"><h4>Utility Products</h4><p>Practical tools designed to solve everyday problems.</p></div>
+<div class="service"><h4>Custom Solutions</h4><p>Tailored mobile applications built around unique ideas and requirements.</p></div>
+</div>
+</div>
+</section>
+
+<section class="section" id="about">
+<div class="container">
+<h2 class="section-title">Our Philosophy</h2>
+<div class="about">
+Technology should serve a purpose.<br><br>
+At Winterlight Technologies, we believe software should be intuitive, useful, and thoughtfully crafted. Every product we create aims to educate, simplify, entertain, or genuinely improve everyday life.
+</div>
+</div>
+</section>
+
+<section class="section" id="contact">
+<div class="container">
+<div class="contact">
+<h2 class="section-title">Contact</h2>
+<p><a href="mailto:winterlighttechnologies@gmail.com">winterlighttechnologies@gmail.com</a></p>
 </div>
 </div>
 </section>
