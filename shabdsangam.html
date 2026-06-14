@@ -5,10 +5,42 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="icon" href="favicon.ico" type="image/x-icon">
 
-<title>Shabd Sangam | Premium Hindi Crossword</title>
-<meta name="description" content="A premium Hindi crossword game (वर्ग पहेली). Build vocabulary daily with challenging 8x8 grid puzzles and unique 16-letter tiles.">
+<title>Shabd Sangam | Premium Hindi Crossword Game (वर्ग पहेली)</title>
+<meta name="description" content="Download Shabd Sangam, a premium Hindi crossword game (वर्ग पहेली). Build your vocabulary daily with challenging 8x8 grid puzzles and unique 16-letter tiles.">
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="canonical" href="https://winterlighttechnologies.com/shabdsangam.html">
+<meta property="og:site_name" content="Winterlight Technologies">
+<meta property="og:title" content="Shabd Sangam | Premium Hindi Crossword">
+<meta property="og:description" content="Train your brain with Shabd Sangam! An authentic offline Hindi crossword experience with daily 8x8 grids.">
+<meta property="og:image" content="https://winterlighttechnologies.com/shabdsangam.png">
+<meta property="og:url" content="https://winterlighttechnologies.com/shabdsangam.html">
+<meta property="og:type" content="website">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "Shabd Sangam",
+  "operatingSystem": "ANDROID",
+  "applicationCategory": "GameApplication",
+  "genre": "Educational Game",
+  "url": "https://play.google.com/store/apps/details?id=com.winterlight.shabdsangam&hl=en",
+  "image": "https://winterlighttechnologies.com/shabdsangam.png",
+  "description": "A premium Hindi crossword game (वर्ग पहेली) and vocabulary builder featuring daily 8x8 grid puzzles, unique 16-letter tiles, and native matra mechanics.",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "INR"
+  },
+  "author": {
+    "@type": "Organization",
+    "name": "Winterlight Technologies",
+    "url": "https://winterlighttechnologies.com/"
+  }
+}
+</script>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
   /* Premium Dark Theme with Liquid Glass Effects */
@@ -21,7 +53,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 40px 0;
+    padding: 20px 0 40px;
     overflow-x: hidden;
   }
 
@@ -42,6 +74,36 @@
     padding: 0 20px;
     text-align: center;
     z-index: 1;
+  }
+
+  /* Top Navigation / Home Button */
+  .top-nav {
+    display: flex;
+    justify-content: flex-start;
+    margin-bottom: 20px;
+    width: 100%;
+  }
+  
+  .home-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: #cbd5e1;
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+    background: rgba(255, 255, 255, 0.05);
+    padding: 8px 16px;
+    border-radius: 50px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    transition: background 0.2s, color 0.2s;
+  }
+  
+  .home-btn:hover, .home-btn:active {
+    background: rgba(255, 255, 255, 0.1);
+    color: #ffffff;
   }
   
   /* Glassmorphism Card */
@@ -150,6 +212,16 @@
 <div class="blob blob2"></div>
 
 <div class="container">
+  <div class="top-nav">
+    <a href="index.html" class="home-btn">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+        <polyline points="9 22 9 12 15 12 15 22"></polyline>
+      </svg>
+      Home
+    </a>
+  </div>
+
   <div class="glass-card">
     <img src="shabdsangam.png" alt="Shabd Sangam Icon" class="app-icon">
     
