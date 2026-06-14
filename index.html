@@ -129,6 +129,15 @@ At Winterlight Technologies, we believe software should be intuitive, useful, an
 <div class="contact">
 <h2 class="section-title">Contact</h2>
 <p><a href="mailto:&#119;&#105;&#110;&#116;&#101;&#114;&#108;&#105;&#103;&#104;&#116;&#116;&#101;&#99;&#104;&#110;&#111;&#108;&#111;&#103;&#105;&#101;&#115;&#64;&#103;&#109;&#97;&#105;&#108;&#46;&#99;&#111;&#109;">Contact Us</a></p>
+
+<div class="social-box">
+  <img src="qr.png" alt="Scan QR Code" class="qr-img">
+  <a href="https://www.instagram.com/winterlighttechnologies/" target="_blank" rel="noopener noreferrer" class="insta-link">
+    <img src="Insta.svg" alt="Instagram" class="insta-icon">
+    Follow us on Instagram
+  </a>
+</div>
+
 </div>
 </div>
 </section>
@@ -174,6 +183,48 @@ nav a{text-decoration:none;color:var(--dark)}
 .contact{padding:50px;text-align:center}
 footer{padding:40px 0;text-align:center;color:var(--text)}
 @media(max-width:768px){.hero h1{font-size:2.2rem}nav ul{display:none}}
+
+/* Social Box Styles */
+.social-box {
+  margin-top: 40px;
+  padding-top: 30px;
+  border-top: 1px solid #e2e8f0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+.qr-img {
+  width: 140px;
+  height: 140px;
+  border-radius: 12px;
+  border: 1px solid #e2e8f0;
+  padding: 10px;
+  background: #f8fbff;
+}
+.insta-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: #ffffff;
+  color: var(--dark);
+  border: 2px solid #e2e8f0;
+  text-decoration: none;
+  padding: 12px 28px;
+  border-radius: 50px;
+  font-weight: 600;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.02);
+}
+.insta-link:hover {
+  border-color: #dbeafe;
+  box-shadow: 0 6px 12px rgba(0,0,0,0.05);
+  transform: translateY(-2px);
+}
+.insta-icon {
+  width: 24px;
+  height: 24px;
+}
 </style>
 </body>
 </html>
