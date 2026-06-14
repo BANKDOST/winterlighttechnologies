@@ -3,100 +3,184 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Shabd Sangam | Authentic Hindi Crossword Puzzle Game</title>
-<meta name="description" content="Solve daily 8x8 Hindi crossword puzzles (वर्ग पहेली). Improve your vocabulary with an authentic word puzzle experience designed for Hindi language lovers.">
-<link rel="canonical" href="https://winterlighttechnologies.com/shabdsangam.html">
-<meta property="og:title" content="Shabd Sangam - Hindi Crossword & Word Puzzle">
-<meta property="og:description" content="Relive the nostalgic charm of the daily newspaper crossword. Learn new Hindi words and exercise your mind.">
-<meta property="og:image" content="https://winterlighttechnologies.com/shabdsangam.png">
-<meta property="og:url" content="https://winterlighttechnologies.com/shabdsangam.html">
-<meta property="og:type" content="website">
+<link rel="icon" href="favicon.ico" type="image/x-icon">
 
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "SoftwareApplication",
-  "name": "Shabd Sangam",
-  "operatingSystem": "ANDROID",
-  "applicationCategory": "GameApplication",
-  "genre": "Educational Game",
-  "url": "https://play.google.com/store/apps/details?id=com.winterlight.shabdsangam&hl=en",
-  "author": {
-    "@type": "Organization",
-    "name": "Winterlight Technologies"
-  },
-  "description": "Welcome to Shabd Sangam, a fun and challenging Hindi crossword game (वर्ग पहेली) featuring engaging 8x8 grids, 16-letter selection tiles, and authentic spelling rules where letters with matras are treated as a single cell. Perfect for building Hindi vocabulary.",
-  "offers": {
-    "@type": "Offer",
-    "price": "0",
-    "priceCurrency": "INR"
-  }
-}
-</script>
+<title>Shabd Sangam | Premium Hindi Crossword</title>
+<meta name="description" content="A premium Hindi crossword game (वर्ग पहेली). Build vocabulary daily with challenging 8x8 grid puzzles and unique 16-letter tiles.">
 
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+
 <style>
-:root{--primary:#1d4ed8;--secondary:#67c6f1;--dark:#0f172a;--text:#475569;--bg:#f8fbff;}
-*{margin:0;padding:0;box-sizing:border-box;font-family:'Inter',sans-serif}
-body{background:var(--bg);color:var(--dark);overflow-x:hidden}
-.hero-bg{position:fixed;border-radius:50%;z-index:-1;top:-200px;right:-200px;width:600px;height:600px;background:radial-gradient(circle,#fff0f5 0%,transparent 70%)}
-.container{width:90%;max-width:1000px;margin:auto}
-header{padding:25px 0}
-nav{display:flex;justify-content:space-between;align-items:center}
-nav a{text-decoration:none;color:var(--dark);font-weight:500}
-.app-header{padding:60px 0;display:flex;align-items:center;gap:40px;flex-wrap:wrap;justify-content:center}
-.app-icon{width:180px;border-radius:35px;box-shadow:0 15px 35px rgba(0,0,0,.1)}
-.app-intro{max-width:500px;text-align:left}
-.app-intro h1{font-size:3rem;margin-bottom:15px;color:var(--dark)}
-.app-intro p{color:var(--text);font-size:1.1rem;line-height:1.7;margin-bottom:25px}
-.store-btn{display:inline-block;background:var(--primary);color:white;text-decoration:none;padding:14px 30px;border-radius:50px;font-weight:600;font-size:1.1rem;box-shadow:0 10px 20px rgba(29,78,216,.2);transition:transform 0.2s}
-.store-btn:hover{transform:translateY(-2px)}
-.features-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:30px;padding:60px 0}
-.feature-box{background:white;padding:35px;border-radius:24px;box-shadow:0 10px 30px rgba(0,0,0,.04)}
-.feature-box h3{margin-bottom:15px;color:var(--primary);font-size:1.4rem}
-.feature-box p{color:var(--text);line-height:1.8}
-.rules-box{background:linear-gradient(135deg,#ffffff,#f8fbff);padding:40px;border-radius:24px;margin:20px 0 60px;border:1px solid #e2e8f0}
-.rules-box h3{color:var(--dark);font-size:1.6rem;margin-bottom:20px;text-align:center}
-.rules-box p{color:var(--text);line-height:1.8;text-align:center;max-width:700px;margin:auto}
-footer{padding:40px 0;text-align:center;color:var(--text)}
-@media(max-width:768px){.app-header{text-align:center}.app-intro{text-align:center}.app-intro h1{font-size:2.4rem}}
+  /* Premium Dark Theme with Liquid Glass Effects */
+  body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #0f172a, #1e293b);
+    color: #ffffff;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 0;
+    overflow-x: hidden;
+  }
+
+  /* Background Ambient Blobs */
+  .blob {
+    position: fixed;
+    filter: blur(90px);
+    z-index: -1;
+    opacity: 0.5;
+  }
+  .blob1 { width: 350px; height: 350px; background: #eab308; top: -100px; left: -100px; border-radius: 50%; }
+  .blob2 { width: 450px; height: 450px; background: #3b82f6; bottom: -150px; right: -100px; border-radius: 50%; }
+
+  /* Mobile-first Container */
+  .container {
+    width: 100%;
+    max-width: 480px; 
+    padding: 0 20px;
+    text-align: center;
+    z-index: 1;
+  }
+  
+  /* Glassmorphism Card */
+  .glass-card {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 32px;
+    padding: 40px 25px 30px;
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4);
+  }
+
+  /* App Icon */
+  .app-icon {
+    width: 110px;
+    height: 110px;
+    border-radius: 24px;
+    margin: 0 auto 15px;
+    box-shadow: 0 15px 35px rgba(234, 179, 8, 0.25); 
+    border: 2px solid rgba(234, 179, 8, 0.4);
+    object-fit: cover;
+  }
+
+  h1 { 
+    font-size: 2rem; 
+    margin: 0 0 5px; 
+    color: #f8fafc;
+    letter-spacing: -0.5px;
+  }
+  
+  h2 { 
+    font-size: 1rem; 
+    margin: 0 0 25px; 
+    color: #94a3b8; 
+    font-weight: 400; 
+  }
+
+  /* Swipeable Screenshot Gallery with 3D Depth */
+  .screenshot-container {
+    display: flex;
+    overflow-x: auto;
+    gap: 15px;
+    padding: 10px 5px 25px;
+    margin-bottom: 10px;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+  }
+  
+  /* Hide Scrollbar for cleaner UI */
+  .screenshot-container::-webkit-scrollbar { display: none; }
+  .screenshot-container { -ms-overflow-style: none; scrollbar-width: none; }
+
+  .screenshot-container img {
+    height: 320px;
+    border-radius: 16px;
+    scroll-snap-align: center;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.5), inset 0 0 0 1px rgba(255,255,255,0.1);
+    border: 1px solid rgba(255,255,255,0.05);
+  }
+  
+  /* Play Store Badge */
+  .play-badge {
+    display: block;
+    width: 200px;
+    margin: 0 auto 30px;
+    transition: transform 0.2s;
+  }
+  
+  .play-badge:active { 
+    transform: scale(0.96); 
+  }
+
+  /* Feature Highlights */
+  .features {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .feature-item {
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    padding: 12px;
+    border-radius: 16px;
+    font-size: 0.9rem;
+    color: #e2e8f0;
+  }
+  
+  .highlight { 
+    color: #facc15; 
+    font-weight: 600; 
+  }
+
+  .dev-link {
+    display: inline-block;
+    margin-top: 25px;
+    color: #64748b;
+    text-decoration: none;
+    font-size: 0.85rem;
+  }
 </style>
 </head>
 <body>
-<div class="hero-bg"></div>
-<header><div class="container"><nav><h3><a href="index.html">← Back to Winterlight Technologies</a></h3></nav></div></header>
+<div class="blob blob1"></div>
+<div class="blob blob2"></div>
 
 <div class="container">
-    <div class="app-header">
-        <img src="shabdsangam.png" alt="Shabd Sangam Hindi Crossword Game" class="app-icon">
-        <div class="app-intro">
-            <h1>Shabd Sangam</h1>
-            <p>A fun and challenging Hindi crossword game (वर्ग पहेली). Relive the good old days of waiting for the daily newspaper crossword right on your phone.</p>
-            <a class="store-btn" target="_blank" href="https://play.google.com/store/apps/details?id=com.winterlight.shabdsangam&hl=en">Download on Google Play</a>
-        </div>
-    </div>
+  <div class="glass-card">
+    <img src="shabdsangam.png" alt="Shabd Sangam Icon" class="app-icon">
+    
+    <h1>Shabd Sangam</h1>
+    <h2>Premium Hindi Crossword (वर्ग पहेली)</h2>
 
-    <div class="features-grid">
-        <div class="feature-box">
-            <h3>🧩 Engaging 8x8 Grids</h3>
-            <p>Solve carefully crafted 8x8 crossword puzzles daily. Simply tap an empty box on the grid, then select the correct letter from the pad below to uncover hidden words and complete the shabd paheli.</p>
-        </div>
-        <div class="feature-box">
-            <h3>🧠 Vocabulary Builder</h3>
-            <p>Explore classic and modern Hindi vocabulary. Perfect for students, language learners, and word puzzle fans wanting to exercise their minds and improve focus and memory.</p>
-        </div>
-        <div class="feature-box">
-            <h3>🎨 Clean, Modern UI</h3>
-            <p>Experience a premium, smooth interface built with modern UI effects. Designed with easy drag-and-drop controls for a distraction-free, relaxing gameplay experience across all age groups.</p>
-        </div>
+    <div class="screenshot-container">
+      <img src="s1.png" alt="Gameplay Grid">
+      <img src="s2.png" alt="16 Letter Tiles">
+      <img src="s3.png" alt="Modern Interface">
+      <img src="s4.png" alt="Word Mechanics">
     </div>
-
-    <div class="rules-box">
-        <h3>An Authentic Hindi Spelling Experience</h3>
-        <p>Unlike basic word games, Shabd Sangam is designed for true Hindi language lovers. The game features a challenging selection pad of <strong>16-letter tiles</strong> to test your spelling. For a genuinely authentic experience, we enforce strict grammatical rules where <strong>letters with matras are treated as a single cell</strong>, making it the perfect digital recreation of a classic Hindi newspaper puzzle.</p>
+    
+    <a href="https://play.google.com/store/apps/details?id=com.winterlight.shabdsangam&hl=en">
+      <img src="googleplay.svg" alt="Get it on Google Play" class="play-badge">
+    </a>
+    
+    <div class="features">
+      <div class="feature-item">
+        🧠 Train your brain with daily <span class="highlight">8x8 Grid</span> puzzles
+      </div>
+      <div class="feature-item">
+        ✨ Challenging <span class="highlight">16-Letter Tiles</span> to solve
+      </div>
+      <div class="feature-item">
+        🧩 Authentic rules: <span class="highlight">Matras</span> form a single cell
+      </div>
     </div>
+  </div>
+  
+  <a href="index.html" class="dev-link">© 2026 Winterlight Technologies</a>
 </div>
-
-<footer>© 2026 Winterlight Technologies. All Rights Reserved.</footer>
 </body>
 </html>
