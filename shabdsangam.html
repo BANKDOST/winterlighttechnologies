@@ -196,6 +196,12 @@
     scroll-snap-align: center;
     box-shadow: 0 6px 12px rgba(0,0,0,0.4), inset 0 0 0 1px rgba(255,255,255,0.1);
     border: 1px solid rgba(255,255,255,0.05);
+    cursor: pointer; /* Indicates it can be clicked */
+    transition: transform 0.2s;
+  }
+  
+  .screenshot-container img:hover {
+    transform: scale(1.02);
   }
 
   /* Feature Highlights */
@@ -226,6 +232,51 @@
     text-decoration: none;
     font-size: 0.75rem;
   }
+
+  /* Image Lightbox (Popup) Styles */
+  .lightbox {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.85);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+  }
+  .lightbox img {
+    max-width: 100%;
+    max-height: 90vh;
+    border-radius: 16px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.5);
+    object-fit: contain;
+  }
+  .lightbox-close {
+    position: absolute;
+    top: 25px;
+    right: 25px;
+    color: white;
+    font-size: 2rem;
+    font-weight: bold;
+    cursor: pointer;
+    background: rgba(255,255,255,0.15);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
+    transition: background 0.2s;
+  }
+  .lightbox-close:hover {
+    background: rgba(255,255,255,0.3);
+  }
 </style>
 </head>
 <body>
@@ -254,13 +305,26 @@
         FREE !
       </div>
       
-      <div style="display: flex; align-items: center; justify-content: center; gap: 6px; font-size: 0.75rem; color: #f8fafc; font-weight: 500; background: rgba(239, 68, 68, 0.1); padding: 6px 12px; border-radius: 10px; border: 1px solid rgba(239, 68, 68, 0.2);">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#fca5a5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
-          <polyline points="22,6 12,13 2,6"></polyline>
-          <line x1="3" y1="3" x2="21" y2="21" stroke="#ef4444" stroke-width="2.5"></line>
-        </svg>
-        <span><span style="color: #fca5a5; font-weight: 700;">No</span> mobile no. • <span style="color: #fca5a5; font-weight: 700;">No</span> email id required</span>
+      <div style="display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 12px; font-size: 0.75rem; color: #f8fafc; font-weight: 500; background: rgba(239, 68, 68, 0.1); padding: 8px 14px; border-radius: 12px; border: 1px solid rgba(239, 68, 68, 0.2);">
+        
+        <span style="display: flex; align-items: center; gap: 5px;">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#fca5a5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect>
+            <line x1="12" y1="18" x2="12.01" y2="18"></line>
+            <line x1="3" y1="3" x2="21" y2="21" stroke="#ef4444" stroke-width="2.5"></line>
+          </svg>
+          <span><span style="color: #fca5a5; font-weight: 700;">No</span> mobile no.</span>
+        </span>
+
+        <span style="display: flex; align-items: center; gap: 5px;">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#fca5a5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+            <polyline points="22,6 12,13 2,6"></polyline>
+            <line x1="3" y1="3" x2="21" y2="21" stroke="#ef4444" stroke-width="2.5"></line>
+          </svg>
+          <span><span style="color: #fca5a5; font-weight: 700;">No</span> email id required</span>
+        </span>
+
       </div>
     </div>
 
@@ -272,10 +336,10 @@
    </a>
 
     <div class="screenshot-container">
-      <img src="s1.png" alt="Gameplay Grid">
-      <img src="s2.png" alt="16 Letter Tiles">
-      <img src="s3.png" alt="Modern Interface">
-      <img src="s4.png" alt="Word Mechanics">
+      <img src="s1.png" alt="Gameplay Grid" onclick="openLightbox(this.src)">
+      <img src="s2.png" alt="16 Letter Tiles" onclick="openLightbox(this.src)">
+      <img src="s3.png" alt="Modern Interface" onclick="openLightbox(this.src)">
+      <img src="s4.png" alt="Word Mechanics" onclick="openLightbox(this.src)">
     </div>
     
     <div class="features">
@@ -293,5 +357,21 @@
   
   <a href="index.html" class="dev-link">© 2026 Winterlight Technologies</a>
 </div>
+
+<div id="imageLightbox" class="lightbox" onclick="closeLightbox()">
+  <div class="lightbox-close">&times;</div>
+  <img id="lightboxImg" src="">
+</div>
+
+<script>
+  function openLightbox(imgSrc) {
+    document.getElementById('lightboxImg').src = imgSrc;
+    document.getElementById('imageLightbox').style.display = 'flex';
+  }
+  function closeLightbox() {
+    document.getElementById('imageLightbox').style.display = 'none';
+  }
+</script>
+
 </body>
 </html>
