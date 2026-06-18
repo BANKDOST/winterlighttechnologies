@@ -233,7 +233,7 @@
     font-size: 0.75rem;
   }
 
-  /* Image Lightbox (Popup) Styles */
+  /* Image Lightbox (Popup) Styles with Nav Arrows */
   .lightbox {
     display: none;
     position: fixed;
@@ -247,14 +247,23 @@
     -webkit-backdrop-filter: blur(8px);
     align-items: center;
     justify-content: center;
-    padding: 20px;
+  }
+  .lightbox-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
   }
   .lightbox img {
-    max-width: 100%;
-    max-height: 90vh;
+    max-width: 90%;
+    max-height: 85vh;
     border-radius: 16px;
     box-shadow: 0 15px 40px rgba(0,0,0,0.5);
     object-fit: contain;
+    z-index: 10001;
+    user-select: none;
   }
   .lightbox-close {
     position: absolute;
@@ -273,10 +282,33 @@
     justify-content: center;
     line-height: 1;
     transition: background 0.2s;
+    z-index: 10002;
   }
   .lightbox-close:hover {
     background: rgba(255,255,255,0.3);
   }
+  .lightbox-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    color: white;
+    font-size: 1.5rem;
+    font-weight: bold;
+    cursor: pointer;
+    background: rgba(255,255,255,0.15);
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    user-select: none;
+    transition: background 0.2s;
+    z-index: 10002;
+  }
+  .lightbox-nav:hover { background: rgba(255,255,255,0.3); }
+  .lightbox-nav.left { left: 15px; }
+  .lightbox-nav.right { right: 15px; }
 </style>
 </head>
 <body>
@@ -336,10 +368,10 @@
    </a>
 
     <div class="screenshot-container">
-      <img src="s1.png" alt="Gameplay Grid" onclick="openLightbox(this.src)">
-      <img src="s2.png" alt="16 Letter Tiles" onclick="openLightbox(this.src)">
-      <img src="s3.png" alt="Modern Interface" onclick="openLightbox(this.src)">
-      <img src="s4.png" alt="Word Mechanics" onclick="openLightbox(this.src)">
+      <img src="s1.png" alt="Gameplay Grid" onclick="openLightbox(0)">
+      <img src="s2.png" alt="16 Letter Tiles" onclick="openLightbox(1)">
+      <img src="s3.png" alt="Modern Interface" onclick="openLightbox(2)">
+      <img src="s4.png" alt="Word Mechanics" onclick="openLightbox(3)">
     </div>
     
     <div class="features">
@@ -358,18 +390,68 @@
   <a href="index.html" class="dev-link">© 2026 Winterlight Technologies</a>
 </div>
 
-<div id="imageLightbox" class="lightbox" onclick="closeLightbox()">
-  <div class="lightbox-close">&times;</div>
-  <img id="lightboxImg" src="">
+<div id="imageLightbox" class="lightbox">
+  <div class="lightbox-wrapper" id="lightboxWrapper">
+    <div class="lightbox-close" onclick="closeLightbox()">&times;</div>
+    <div class="lightbox-nav left" onclick="changeLightboxImage(-1)">&#10094;</div>
+    <img id="lightboxImg" src="">
+    <div class="lightbox-nav right" onclick="changeLightboxImage(1)">&#10095;</div>
+  </div>
 </div>
 
 <script>
-  function openLightbox(imgSrc) {
-    document.getElementById('lightboxImg').src = imgSrc;
-    document.getElementById('imageLightbox').style.display = 'flex';
+  // Array of your screenshot images
+  const images = ["s1.png", "s2.png", "s3.png", "s4.png"];
+  let currentImageIndex = 0;
+  const lightbox = document.getElementById('imageLightbox');
+  const lightboxImg = document.getElementById('lightboxImg');
+
+  function openLightbox(index) {
+    currentImageIndex = index;
+    lightboxImg.src = images[currentImageIndex];
+    lightbox.style.display = 'flex';
   }
+
   function closeLightbox() {
-    document.getElementById('imageLightbox').style.display = 'none';
+    lightbox.style.display = 'none';
+  }
+
+  function changeLightboxImage(direction) {
+    currentImageIndex += direction;
+    // Loop around if at the ends
+    if (currentImageIndex < 0) currentImageIndex = images.length - 1;
+    if (currentImageIndex >= images.length) currentImageIndex = 0;
+    lightboxImg.src = images[currentImageIndex];
+  }
+
+  // Close lightbox when clicking outside the image and buttons
+  lightbox.addEventListener('click', function(e) {
+    if (e.target.id === 'imageLightbox' || e.target.id === 'lightboxWrapper') {
+      closeLightbox();
+    }
+  });
+
+  // Touch Swipe Support for Mobile
+  let touchstartX = 0;
+  let touchendX = 0;
+
+  lightbox.addEventListener('touchstart', function(e) {
+    touchstartX = e.changedTouches[0].screenX;
+  });
+
+  lightbox.addEventListener('touchend', function(e) {
+    touchendX = e.changedTouches[0].screenX;
+    handleSwipe();
+  });
+
+  function handleSwipe() {
+    const swipeThreshold = 40; // minimum distance to register as a swipe
+    if (touchendX < touchstartX - swipeThreshold) {
+      changeLightboxImage(1); // swiped left (next image)
+    }
+    if (touchendX > touchstartX + swipeThreshold) {
+      changeLightboxImage(-1); // swiped right (previous image)
+    }
   }
 </script>
 
