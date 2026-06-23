@@ -9,15 +9,10 @@
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-6XEY1QD53H"></script>
 
     <script>
-
       window.dataLayer = window.dataLayer || [];
-
       function gtag(){dataLayer.push(arguments);}
-
       gtag('js', new Date());
-
       gtag('config', 'G-6XEY1QD53H');
-
     </script>  
     <script type="text/javascript">
     (function(c,l,a,r,i,t,y){
@@ -63,7 +58,6 @@
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
 <style>
-  /* Premium Dark Theme with Liquid Glass Effects */
   body {
     margin: 0;
     font-family: 'Poppins', sans-serif;
@@ -73,250 +67,84 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 10px 0 20px; /* Reduced top padding further */
+    padding: 10px 0 20px; 
     overflow-x: hidden;
   }
 
-  /* Background Ambient Blobs */
-  .blob {
-    position: fixed;
-    filter: blur(90px);
-    z-index: -1;
-    opacity: 0.5;
-  }
+  .blob { position: fixed; filter: blur(90px); z-index: -1; opacity: 0.5; }
   .blob1 { width: 350px; height: 350px; background: #eab308; top: -100px; left: -100px; border-radius: 50%; }
   .blob2 { width: 450px; height: 450px; background: #3b82f6; bottom: -150px; right: -100px; border-radius: 50%; }
 
-  /* Mobile-first Container */
-  .container {
-    width: 100%;
-    max-width: 480px; 
-    padding: 0 15px;
-    text-align: center;
-    z-index: 1;
-  }
+  .container { width: 100%; max-width: 480px; padding: 0 15px; text-align: center; z-index: 1; }
 
-  /* Top Navigation / Home Button */
-  .top-nav {
-    display: flex;
-    justify-content: flex-start;
-    margin-bottom: 8px; /* Tighter margin */
-    width: 100%;
-  }
-  
+  .top-nav { display: flex; justify-content: flex-start; margin-bottom: 8px; width: 100%; }
   .home-btn {
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    color: #cbd5e1;
-    text-decoration: none;
-    font-size: 0.8rem;
-    font-weight: 500;
-    background: rgba(255, 255, 255, 0.05);
-    padding: 4px 12px;
-    border-radius: 50px;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
+    display: inline-flex; align-items: center; gap: 6px; color: #cbd5e1; text-decoration: none;
+    font-size: 0.8rem; font-weight: 500; background: rgba(255, 255, 255, 0.05); padding: 4px 12px;
+    border-radius: 50px; border: 1px solid rgba(255, 255, 255, 0.1); backdrop-filter: blur(10px);
     transition: background 0.2s, color 0.2s;
   }
+  .home-btn:hover { background: rgba(255, 255, 255, 0.1); color: #ffffff; }
   
-  .home-btn:hover, .home-btn:active {
-    background: rgba(255, 255, 255, 0.1);
-    color: #ffffff;
-  }
-  
-  /* Glassmorphism Card */
   .glass-card {
-    background: rgba(255, 255, 255, 0.05);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 24px;
-    padding: 15px 15px; /* Tighter padding */
-    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4);
+    background: rgba(255, 255, 255, 0.05); backdrop-filter: blur(20px); border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 24px; padding: 15px 15px; box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4);
   }
 
-  /* App Icon - Scaled Down More */
   .app-icon {
-    width: 64px;
-    height: 64px;
-    border-radius: 16px;
-    margin: 0 auto 8px;
-    box-shadow: 0 8px 20px rgba(234, 179, 8, 0.25); 
-    border: 2px solid rgba(234, 179, 8, 0.4);
-    object-fit: cover;
+    width: 64px; height: 64px; border-radius: 16px; margin: 0 auto 8px;
+    box-shadow: 0 8px 20px rgba(234, 179, 8, 0.25); border: 2px solid rgba(234, 179, 8, 0.4); object-fit: cover;
   }
 
-  h1 { 
-    font-size: 1.5rem; /* Smaller text */
-    margin: 0 0 2px; 
-    color: #f8fafc;
-    letter-spacing: -0.5px;
-  }
-  
-  h2 { 
-    font-size: 0.85rem; 
-    margin: 0 0 8px; 
-    color: #94a3b8; 
-    font-weight: 400; 
-  }
+  h1 { font-size: 1.5rem; margin: 0 0 2px; color: #f8fafc; letter-spacing: -0.5px; }
+  h2 { font-size: 0.95rem; margin: 0 0 6px; color: #94a3b8; font-weight: 400; }
 
-  /* Play Store Badge - Breathing Animation Added */
-  .play-badge {
-    display: block;
-    width: 140px; /* Shrunk to fit better */
-    margin: 0 auto 10px;
-    transition: transform 0.2s;
-    border-radius: 8px; /* Helps the shadow follow the shape */
-    animation: pulse-button 2s infinite; /* Adds the pulse */
+  /* Animated CSS Install Button */
+  .install-btn {
+    display: flex; align-items: center; justify-content: center; gap: 8px;
+    margin: 5px auto 10px; padding: 14px 24px; background: linear-gradient(135deg, #22c55e, #15803d);
+    color: white; font-weight: 700; font-size: 1.1rem; text-decoration: none; border-radius: 50px;
+    width: max-content; transition: transform 0.2s; animation: pulse-button 2s infinite;
   }
-  
-  .play-badge:active { 
-    transform: scale(0.96) !important; /* Forces scale down on click */
-  }
+  .install-btn:active { transform: scale(0.96) !important; }
 
   @keyframes pulse-button {
-    0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(250, 204, 21, 0.6); }
-    50% { transform: scale(1.05); box-shadow: 0 0 0 12px rgba(250, 204, 21, 0); }
-    100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(250, 204, 21, 0); }
+    0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.6); }
+    50% { transform: scale(1.03); box-shadow: 0 0 0 12px rgba(34, 197, 94, 0); }
+    100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(34, 197, 94, 0); }
   }
 
-  /* Swipeable Screenshot Gallery */
   .screenshot-container {
-    display: flex;
-    overflow-x: auto;
-    gap: 10px;
-    padding: 5px;
-    margin-bottom: 5px;
-    scroll-snap-type: x mandatory;
-    -webkit-overflow-scrolling: touch;
+    display: flex; overflow-x: auto; gap: 10px; padding: 5px; margin-bottom: 5px;
+    scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch;
   }
-  
-  /* Hide Scrollbar */
   .screenshot-container::-webkit-scrollbar { display: none; }
   .screenshot-container { -ms-overflow-style: none; scrollbar-width: none; }
-
-  /* Screenshots - Reduced Height Significantly */
   .screenshot-container img {
-    height: 190px; /* Highly reduced to ensure everything fits above the fold */
-    border-radius: 10px;
-    scroll-snap-align: center;
+    height: 190px; border-radius: 10px; scroll-snap-align: center;
     box-shadow: 0 6px 12px rgba(0,0,0,0.4), inset 0 0 0 1px rgba(255,255,255,0.1);
-    border: 1px solid rgba(255,255,255,0.05);
-    cursor: pointer; /* Indicates it can be clicked */
-    transition: transform 0.2s;
+    border: 1px solid rgba(255,255,255,0.05); cursor: pointer; transition: transform 0.2s;
   }
-  
-  .screenshot-container img:hover {
-    transform: scale(1.02);
-  }
+  .screenshot-container img:hover { transform: scale(1.02); }
 
-  /* Feature Highlights */
-  .features {
-    display: flex;
-    flex-direction: column;
-    gap: 6px;
-  }
-  
+  .features { display: flex; flex-direction: column; gap: 6px; }
   .feature-item {
-    background: rgba(255, 255, 255, 0.04);
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    padding: 8px;
-    border-radius: 12px;
-    font-size: 0.8rem;
-    color: #e2e8f0;
+    background: rgba(255, 255, 255, 0.04); border: 1px solid rgba(255, 255, 255, 0.08);
+    padding: 8px; border-radius: 12px; font-size: 0.8rem; color: #e2e8f0;
   }
-  
-  .highlight { 
-    color: #facc15; 
-    font-weight: 600; 
-  }
+  .highlight { color: #facc15; font-weight: 600; }
+  .dev-link { display: inline-block; margin-top: 15px; color: #64748b; text-decoration: none; font-size: 0.75rem; }
 
-  .dev-link {
-    display: inline-block;
-    margin-top: 15px;
-    color: #64748b;
-    text-decoration: none;
-    font-size: 0.75rem;
-  }
-
-  /* Image Lightbox (Popup) Styles with Nav Arrows */
+  /* Lightbox */
   .lightbox {
-    display: none;
-    position: fixed;
-    z-index: 9999;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.85);
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
-    align-items: center;
-    justify-content: center;
+    display: none; position: fixed; z-index: 9999; top: 0; left: 0; width: 100%; height: 100%;
+    background-color: rgba(0, 0, 0, 0.85); backdrop-filter: blur(8px); align-items: center; justify-content: center;
   }
-  .lightbox-wrapper {
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    height: 100%;
-  }
-  .lightbox img {
-    max-width: 90%;
-    max-height: 85vh;
-    border-radius: 16px;
-    box-shadow: 0 15px 40px rgba(0,0,0,0.5);
-    object-fit: contain;
-    z-index: 10001;
-    user-select: none;
-  }
-  .lightbox-close {
-    position: absolute;
-    top: 25px;
-    right: 25px;
-    color: white;
-    font-size: 2rem;
-    font-weight: bold;
-    cursor: pointer;
-    background: rgba(255,255,255,0.15);
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    line-height: 1;
-    transition: background 0.2s;
-    z-index: 10002;
-  }
-  .lightbox-close:hover {
-    background: rgba(255,255,255,0.3);
-  }
-  .lightbox-nav {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    color: white;
-    font-size: 1.5rem;
-    font-weight: bold;
-    cursor: pointer;
-    background: rgba(255,255,255,0.15);
-    width: 45px;
-    height: 45px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    user-select: none;
-    transition: background 0.2s;
-    z-index: 10002;
-  }
-  .lightbox-nav:hover { background: rgba(255,255,255,0.3); }
-  .lightbox-nav.left { left: 15px; }
-  .lightbox-nav.right { right: 15px; }
+  .lightbox-wrapper { position: relative; display: flex; align-items: center; justify-content: center; width: 100%; height: 100%; }
+  .lightbox img { max-width: 90%; max-height: 85vh; border-radius: 16px; box-shadow: 0 15px 40px rgba(0,0,0,0.5); object-fit: contain; z-index: 10001; user-select: none; }
+  .lightbox-close { position: absolute; top: 25px; right: 25px; color: white; font-size: 2rem; font-weight: bold; cursor: pointer; background: rgba(255,255,255,0.15); width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; line-height: 1; z-index: 10002; }
+  .lightbox-nav { position: absolute; top: 50%; transform: translateY(-50%); color: white; font-size: 1.5rem; font-weight: bold; cursor: pointer; background: rgba(255,255,255,0.15); width: 45px; height: 45px; border-radius: 50%; display: flex; align-items: center; justify-content: center; user-select: none; z-index: 10002; }
+  .lightbox-nav.left { left: 15px; } .lightbox-nav.right { right: 15px; }
 </style>
 </head>
 <body>
@@ -338,46 +166,38 @@
     <img src="shabdsangam.png" alt="Shabd Sangam Icon" class="app-icon">
     
     <h1>Shabd Sangam</h1>
-    <h2>Free Hindi Crossword (वर्ग पहेली)</h2>
+    <h2>भारत का हिंदी वर्ग पहेली गेम</h2>
 
-    <div style="margin-bottom: 12px; display: flex; flex-direction: column; align-items: center; gap: 6px;">
-      <div style="background: linear-gradient(135deg, #22c55e, #166534); color: #ffffff; padding: 4px 20px; border-radius: 50px; font-weight: 800; font-size: 1.1rem; letter-spacing: 1px; box-shadow: 0 4px 12px rgba(34, 197, 94, 0.4); border: 2px solid #4ade80; text-transform: uppercase;">
-        FREE !
-      </div>
-      
-      <div style="display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 12px; font-size: 0.75rem; color: #f8fafc; font-weight: 500; background: rgba(239, 68, 68, 0.1); padding: 8px 14px; border-radius: 12px; border: 1px solid rgba(239, 68, 68, 0.2);">
-        
-        <span style="display: flex; align-items: center; gap: 5px;">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#fca5a5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect>
-            <line x1="12" y1="18" x2="12.01" y2="18"></line>
-            <line x1="3" y1="3" x2="21" y2="21" stroke="#ef4444" stroke-width="2.5"></line>
-          </svg>
-          <span><span style="color: #fca5a5; font-weight: 700;">No</span> mobile no.</span>
-        </span>
-
-        <span style="display: flex; align-items: center; gap: 5px;">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#fca5a5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
-            <polyline points="22,6 12,13 2,6"></polyline>
-            <line x1="3" y1="3" x2="21" y2="21" stroke="#ef4444" stroke-width="2.5"></line>
-          </svg>
-          <span><span style="color: #fca5a5; font-weight: 700;">No</span> email id required</span>
-        </span>
-
-      </div>
+    <div style="color:#facc15; font-weight:600; font-size: 0.85rem; margin-bottom: 12px;">
+      🧩 1000+ शब्द पहेलियाँ • 📶 Offline • ⭐ बिल्कुल मुफ्त
     </div>
 
-    <div style="font-size: 0.85rem; color: #facc15; font-weight: 600; margin-bottom: 8px; margin-top: 5px;">
+    <div style="display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 12px; font-size: 0.75rem; color: #f8fafc; font-weight: 500; background: rgba(239, 68, 68, 0.1); padding: 8px 14px; border-radius: 12px; border: 1px solid rgba(239, 68, 68, 0.2); margin-bottom: 15px;">
+      <span style="display: flex; align-items: center; gap: 5px;">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#fca5a5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect>
+          <line x1="12" y1="18" x2="12.01" y2="18"></line>
+          <line x1="3" y1="3" x2="21" y2="21" stroke="#ef4444" stroke-width="2.5"></line>
+        </svg>
+        <span><span style="color: #fca5a5; font-weight: 700;">No</span> mobile no.</span>
+      </span>
+      <span style="display: flex; align-items: center; gap: 5px;">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#fca5a5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+          <polyline points="22,6 12,13 2,6"></polyline>
+          <line x1="3" y1="3" x2="21" y2="21" stroke="#ef4444" stroke-width="2.5"></line>
+        </svg>
+        <span><span style="color: #fca5a5; font-weight: 700;">No</span> email id required</span>
+      </span>
+    </div>
+
+    <div style="font-size: 0.85rem; color: #facc15; font-weight: 600; margin-bottom: 5px;">
       👇 Click here to install from Play Store 👇
     </div>
 
-   <a href="https://play.google.com/store/apps/details?id=com.winterlight.shabdsangam&hl=en"
-   onclick="gtag('event', 'playstore_click', {
-      'app_name': 'Shabd Sangam'
-   });">
-  <img src="googleplay.svg" alt="Get it on Google Play" class="play-badge">
-   </a>
+    <a class="install-btn" href="https://play.google.com/store/apps/details?id=com.winterlight.shabdsangam&hl=en" target="_blank" onclick="gtag('event','playstore_click');clarity('event','playstore_click');">
+      📲 Install Free on Google Play
+    </a>
 
     <div class="screenshot-container">
       <img src="s1.png" alt="Gameplay Grid" onclick="openLightbox(0)">
@@ -387,15 +207,9 @@
     </div>
     
     <div class="features">
-      <div class="feature-item">
-        🧠 Train your brain with Free Daily <span class="highlight">8x8 Grid</span> puzzles
-      </div>
-      <div class="feature-item">
-        ✨ Challenging <span class="highlight">16-Letter Tiles</span> to solve
-      </div>
-      <div class="feature-item">
-        🧩 Authentic rules: <span class="highlight">Matras</span> form a single cell
-      </div>
+      <div class="feature-item">🧠 Train your brain with Free Daily <span class="highlight">8x8 Grid</span> puzzles</div>
+      <div class="feature-item">✨ Challenging <span class="highlight">16-Letter Tiles</span> to solve</div>
+      <div class="feature-item">🧩 Authentic rules: <span class="highlight">Matras</span> form a single cell</div>
     </div>
   </div>
   
@@ -412,7 +226,6 @@
 </div>
 
 <script>
-  // Array of your screenshot images
   const images = ["s1.png", "s2.png", "s3.png", "s4.png"];
   let currentImageIndex = 0;
   const lightbox = document.getElementById('imageLightbox');
@@ -423,48 +236,26 @@
     lightboxImg.src = images[currentImageIndex];
     lightbox.style.display = 'flex';
   }
-
-  function closeLightbox() {
-    lightbox.style.display = 'none';
-  }
-
+  function closeLightbox() { lightbox.style.display = 'none'; }
   function changeLightboxImage(direction) {
     currentImageIndex += direction;
-    // Loop around if at the ends
     if (currentImageIndex < 0) currentImageIndex = images.length - 1;
     if (currentImageIndex >= images.length) currentImageIndex = 0;
     lightboxImg.src = images[currentImageIndex];
   }
 
-  // Close lightbox when clicking outside the image and buttons
   lightbox.addEventListener('click', function(e) {
-    if (e.target.id === 'imageLightbox' || e.target.id === 'lightboxWrapper') {
-      closeLightbox();
-    }
+    if (e.target.id === 'imageLightbox' || e.target.id === 'lightboxWrapper') { closeLightbox(); }
   });
 
-  // Touch Swipe Support for Mobile
-  let touchstartX = 0;
-  let touchendX = 0;
-
-  lightbox.addEventListener('touchstart', function(e) {
-    touchstartX = e.changedTouches[0].screenX;
-  });
-
+  let touchstartX = 0; let touchendX = 0;
+  lightbox.addEventListener('touchstart', function(e) { touchstartX = e.changedTouches[0].screenX; });
   lightbox.addEventListener('touchend', function(e) {
     touchendX = e.changedTouches[0].screenX;
-    handleSwipe();
+    const swipeThreshold = 40;
+    if (touchendX < touchstartX - swipeThreshold) changeLightboxImage(1);
+    if (touchendX > touchstartX + swipeThreshold) changeLightboxImage(-1);
   });
-
-  function handleSwipe() {
-    const swipeThreshold = 40; // minimum distance to register as a swipe
-    if (touchendX < touchstartX - swipeThreshold) {
-      changeLightboxImage(1); // swiped left (next image)
-    }
-    if (touchendX > touchstartX + swipeThreshold) {
-      changeLightboxImage(-1); // swiped right (previous image)
-    }
-  }
 </script>
 
 </body>
